@@ -1,0 +1,294 @@
+/* src/interfaces/styles/main.css */
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
+.dashboard {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación con pestañas */
+.tabs {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e1e5e9;
+  padding-bottom: 2px;
+}
+
+.tabs button {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  margin-right: 5px;
+  border-radius: 6px 6px 0 0;
+}
+
+.tabs button:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.tabs button.active {
+  border-bottom-color: #007bff;
+  color: #007bff;
+  background-color: #f8f9fa;
+}
+
+/* Contenido de las pestañas */
+.tab-content {
+  padding: 30px;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  background-color: #fafbfc;
+}
+
+/* Formularios */
+.form-container {
+  max-width: 500px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Botones */
+.btn {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}
+
+/* Mensajes de error */
+.error {
+  color: #dc3545;
+  padding: 12px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+/* Mensajes de éxito */
+.success {
+  color: #155724;
+  padding: 12px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+/* Detalles de usuario */
+.user-details {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #d1e7dd;
+  border-radius: 8px;
+  background-color: #d1e7dd;
+}
+
+.user-details h3 {
+  color: #0f5132;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.user-details p {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  border-left: 4px solid #0f5132;
+}
+
+/* Lista de libros */
+.books-list {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #cce7ff;
+  border-radius: 8px;
+  background-color: #e7f3ff;
+}
+
+.books-list h3 {
+  color: #084298;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.books-list ul {
+  list-style: none;
+}
+
+.books-list li {
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 6px;
+  border-left: 4px solid #084298;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.books-list li:hover {
+  transform: translateX(5px);
+}
+
+/* Loading states */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    margin: 20px;
+    padding: 15px;
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .tabs button {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+/* Utilidades */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
