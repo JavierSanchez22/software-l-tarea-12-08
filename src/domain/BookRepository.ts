@@ -1,3 +1,6 @@
+import { BookDto } from "./Book";
+
 export interface BookRepository {
-  find(): Promise<string[]>; // simplificado
+    find(): Promise<BookDto[]>;
+    findByUser(userId: string): Promise<BookDto[]>;
 }
